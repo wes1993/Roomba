@@ -391,7 +391,7 @@ public:
     #elif defined HAVE_HWSERIAL1
       Roomba(HardwareSerial* serial = &Serial1, Baud baud = Baud57600);
     #else
-      Roomba(Serial_* serial = &serial, Baud baud = Baud57600);
+      Roomba(HardwareSerial* serial = &Serial, Baud baud = Baud115200);
     #endif
 
     /// Resets the Roomba.
