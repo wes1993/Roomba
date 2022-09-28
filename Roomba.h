@@ -380,19 +380,15 @@ public:
 	SensorRadius                   = 40,
 	SensorRightVelocity            = 41,
 	SensorLeftVelocity             = 42,
+	SensorLeftDistance             = 43,
+	SensorRightDistance            = 44,
     } Sensor;
 
     /// Constructor. You can have multiple simultaneous Roomba if that makes sense.
     /// \param[in] serial POinter to the HardwareSerial port to use to communicate with the Roomba.
     /// Defaults to &Serial
     /// \param[in] baud the baud rate to use on the serial port. Defaults to 57600, the default for the Roomba.
-    #ifdef HAVE_HWSERIAL0
-      Roomba(HardwareSerial* serial = &Serial, Baud baud = Baud57600);
-    #elif defined HAVE_HWSERIAL1
-      Roomba(HardwareSerial* serial = &Serial1, Baud baud = Baud57600);
-    #else
       Roomba(HardwareSerial* serial = &Serial, Baud baud = Baud115200);
-    #endif
 
     /// Resets the Roomba.
     /// It will emit its startup message
