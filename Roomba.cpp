@@ -299,9 +299,10 @@ bool Roomba::pollSensors(uint8_t* dest, uint8_t len)
 	switch (_pollState)
 	{
 	    case PollStateIdle:
-		if (ch == 19)
+		if (ch == 19) {
 		    _pollState = PollStateWaitCount;
                     _pollChecksum = ch;
+                }
 		break;
 
 	    case PollStateWaitCount:
